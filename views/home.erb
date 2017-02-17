@@ -1,0 +1,39 @@
+
+<body>
+	<nav>
+		<%= flash[:notice] %>
+		<ul class = "navbar">
+			<img src = images\logo.png></img>
+			<% unless @current_user %>
+			<li>
+				<a href = \signup class="active">SIGNUP</a>
+			</li>
+			<li>
+				<a href = \login class="active">LOGIN</a>
+			</li>
+			<% end %>
+			<% if session[:user_id] %>
+			<li>
+				<a href = \logout class="active">LOGOUT</a>
+			</li>
+			<li>
+				<a href = \ class="active">HOME</a>
+			</li>
+			<% end %>			
+		</ul>
+	</nav>
+	<h1>WELCOME TO BLOGMUSIC</h1>
+	<p>TEST</p>
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Text</th>
+		</tr>
+		<% @posts.each do |post| %>
+		<tr>
+			<td><a href="/post/<%= post.id %>"><%= post.title %></a></td>
+			<td><%= post.text %></td>
+		</tr>
+		<% end %>
+	</table>
+</body>

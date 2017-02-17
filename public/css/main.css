@@ -1,0 +1,32 @@
+.navbar {
+    list-style-type: none;
+    margin: -4px;
+    padding: -6px;
+    overflow: hidden;
+    background-color: black;
+    }
+    .navbar img {
+            margin-top: 30px;
+            margin-right: 60px;
+            width: 10%;
+            float: left;    
+    }
+    .navbar li {
+            float: right;
+            margin-right: 60px;
+    }
+    .navbar li a {
+           font-family: "Serif", Garamond, monospace;
+           font-size: 1.0em;
+           display: inline-block;
+           color: rgb(255,255,255);
+           text-align: center;
+           padding: 34px 26px;
+           text-decoration: none;
+    }
+     /*.navbar li */
+     a:hover {
+               background-color: rgba(255,255,255,0.23);
+               cursor: pointer;
+               transition: .3s background;
+    }
