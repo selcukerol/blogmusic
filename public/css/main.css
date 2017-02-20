@@ -1,4 +1,14 @@
+body{
+  background-image: url("../images/band1.jpeg");
+  background-size:cover;
+}
+
+.logo{
+  height:120px;
+  width: 130px;
+}
 .navbar {
+    height: 145px;
     list-style-type: none;
     margin: -4px;
     padding: -6px;
@@ -23,10 +33,32 @@
            text-align: center;
            padding: 34px 26px;
            text-decoration: none;
+           height:145px;
+
     }
      /*.navbar li */
      a:hover {
                background-color: rgba(255,255,255,0.23);
                cursor: pointer;
                transition: .3s background;
+               height: 100%;
+    }
+
+    .ti{
+      /*background-color: rgba(0,0,0,.5);*/
+      font-size: 50px;
+      color: white;
+      margin:30px;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      
+    }
+
+    .tx{
+      color:white;
+      font-size: 20px;
+      background-color: rgba(0,0,0,.5);
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      margin-bottom: 40px;
+      
     }

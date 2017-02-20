@@ -16,7 +16,7 @@ end
 
 get '/' do
   @posts = Post.all
-  @current_user = current_user
+  # @current_user = current_user
   # @user.id = session[:user_id]
 	erb :home 
 end
