@@ -1,4 +1,5 @@
 
+
 	<nav>
 		<ul class = "navbar">
 			<img src = "images\musiclogo2.png" class="logo"></img>
@@ -11,6 +12,9 @@
 		</ul>
 	</nav>
 	<p>WELCOME TO POST PAGE</p>
+	<% if session[:user_id] %>
+	<a href = \settings class ="active">Logged in as "<%= @current_user.username %>"</a>
+<% end %>
 	<form method="POST" action="/post">   
 		<label for="title">Post Title</label>   
 		<input type="text" name="[post]title">   
