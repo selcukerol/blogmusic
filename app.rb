@@ -10,31 +10,58 @@ set :database, "sqlite3:wdi.db"
 
 enable :sessions
 
+before do
+  current_user
+end
+
 get '/' do
-	erb :home 
+  @posts = Post.all
+  
+  p @current_user
+  erb :home
 end
 
 get '/login' do
-	erb :login
+    erb :login
+end
+
+get '/post' do
+  if @current_user
+    erb :post
+  else
+    redirect '/'
+  end
 end
 
 get '/logout' do
   session.destroy
   flash[:notice] = "You are now logged out"
   redirect '/login'
-end	
+end    
 
 post '/login' do
   @user = User.where("fname = '#{params[:fname]}'").first
 
-  p params
+ p params
 
-  if @user && @user.password == params[:password] && @user.email == params[:email]
+ if @user && @user.password == params[:password] && @user.email == params[:email]
    # "WELCOME #{@user.fname}!"
     session[:user_id] = @user.id
     flash[:notice] = "You successfully logged in!"
   else
     flash[:notice] = "Invalid username or password"
   end
-  redirect '/login'
+  redirect '/post'
+end
+
+def current_user
+  if session[:user_id]
+    @current_user = User.find(session[:user_id])
+    # just like:
+    # User.where("id = '#{session[:user_id]}'")
+  end
+end
+
+post '/post' do
+  @post = Post.create(params[:post])
 end
