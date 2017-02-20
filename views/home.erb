@@ -6,22 +6,28 @@
 			<img src = images\logo.png></img>
 			<% unless @current_user %>
 			<li>
-				<a href = \signup class="active">SIGNUP</a>
+				<a href = \signup class= "active">SIGNUP</a>
 			</li>
 			<li>
-				<a href = \login class="active">LOGIN</a>
+				<a href = \login class= "active">LOGIN</a>
 			</li>
 			<% end %>
 			<% if session[:user_id] %>
 			<li>
-				<a href = \logout class="active">LOGOUT</a>
+				<a href = \logout class = "active">LOGOUT</a>
 			</li>
 			<li>
-				<a href = \ class="active">HOME</a>
+				<a href = \post class = "active">POST</a>
+			</li>
+			<li>
+				<a href = \ class = "active">HOME</a>
 			</li>
 			<% end %>			
 		</ul>
 	</nav>
+	<% if session[:user_id] %>
+	<a href = \settings class ="active">Logged in as "<%= @current_user.username %>"</a>
+	<% end %>
 	<h1>WELCOME TO BLOGMUSIC</h1>
 	<p>TEST</p>
 	<table>
