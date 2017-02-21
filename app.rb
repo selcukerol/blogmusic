@@ -15,7 +15,12 @@ before do
 end
 
 get '/' do
-    erb :home 
+
+  @posts = Post.all
+
+  erb :home 
+
+
 end
 
 get '/login' do
