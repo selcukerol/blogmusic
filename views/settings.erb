@@ -1,0 +1,36 @@
+<nav>
+  <ul class = "navbar">
+    <img src = images\logo.png></img>
+    <li>
+      <a href = \logout class="active">LOGOUT</a>
+    </li>
+    <li>
+      <a href = \ class="active">POST</a>
+    </li> 
+    <li>
+      <a href = \ class="active">HOME</a>
+    </li>     
+  </ul>
+</nav>
+<form method="POST" action="/settings">
+  <fieldset>
+    <legend>PROFILE</legend>
+    <label for="user">First Name</label>
+    <input name="fname" value=<%= @current_user.fname %>><br />
+    <label for="user">Last Name</label>
+    <input name="lname" value=<%= @current_user.lname %>><br />
+    <label for="email">Email</label>
+    <input name="email" value=<%= @current_user.email %>><br />
+    <label for="username">Username</label>
+    <input name="username" value=<%= @current_user.username %>><br />
+    <label for="password">Current password</label>
+    <input type="current password" name="password"><br />
+    <label for="new password"> New password</label>
+    <input type="new password" name="new_password"/><br />
+    <input type="submit" value="Edit Profile" /><br />
+    <input formaction="/delete-account" type="submit" value="DELETE USER"/>
+  </fieldset>
+</form>
+
+
+

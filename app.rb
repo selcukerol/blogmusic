@@ -15,10 +15,7 @@ before do
 end
 
 get '/' do
-  @posts = Post.all
-  
-  p @current_user
-  erb :home
+    erb :home 
 end
 
 get '/login' do
@@ -63,5 +60,5 @@ def current_user
 end
 
 post '/post' do
-  @post = Post.create(params[:post])
+  @post = Post.create (params[:post])
 end

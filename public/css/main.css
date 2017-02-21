@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
 	background:rgba(66, 235, 244,1);
 	
@@ -79,3 +80,37 @@ img {
   .show-number{
   opacity: 1;
 }
+=======
+.navbar {
+    list-style-type: none;
+    margin: -4px;
+    padding: -6px;
+    overflow: hidden;
+    background-color: black;
+    }
+    .navbar img {
+            margin-top: 30px;
+            margin-right: 60px;
+            width: 10%;
+            float: left;    
+    }
+    .navbar li {
+            float: right;
+            margin-right: 60px;
+    }
+    .navbar li a {
+           font-family: "Serif", Garamond, monospace;
+           font-size: 1.0em;
+           display: inline-block;
+           color: rgb(255,255,255);
+           text-align: center;
+           padding: 34px 26px;
+           text-decoration: none;
+    }
+     /*.navbar li */
+     a:hover {
+               background-color: rgba(255,255,255,0.23);
+               cursor: pointer;
+               transition: .3s background;
+    }
+>>>>>>> 8a41cdf0616d1b4eabdef4a1b32c29bd6cd67028
