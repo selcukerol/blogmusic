@@ -45,6 +45,34 @@
 			<div class="col-xs-2">
 			</div>
 		</div>
+
+		<% @posts.each do |post| %>
+
+		<div class="row">
+			<div class="col-xs-2">
+			</div>
+			<div class="col-xs-8 ti">
+
+			<%= post.title %>
+
+			</div>
+			<div class="col-xs-2">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-2">
+			</div>
+			<div class="col-xs-8 tx">
+			
+			<%= post.text %>
+
+			</div>
+			<div class="col-xs-2">
+			</div>
+
+			<% end %>
+		</div>
 	<!-- <h1>WELCOME TO BLOGMUSIC</h1>
 
 	<% if session[:user_id] %>

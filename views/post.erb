@@ -11,15 +11,15 @@
 			</li>			
 		</ul>
 	</nav>
-	<p>WELCOME TO POST PAGE</p>
+	<div class="lg" id="welcome">Post your Music Review</div>
 	<% if session[:user_id] %>
 	<a href = \settings class ="active">Logged in as "<%= @current_user.username %>"</a>
 <% end %>
-	<form method="POST" action="/post">   
-		<label for="title">Post Title</label>   
+	<form method="POST" action="/post" class="form2">   
+		<label for="title" class="enter">Album Name</label>   
 		<input type="text" name="[post]title">   
-		<label for="text">Post Text</label>   
+		<label for="text" class="enter" id="ta">Review</label>   
 		<textarea name="[post]text"></textarea>   
-		<input type="submit"> 
+		<input type="submit" class="sub"> 
 	</form>
 	<%= flash[:alert] %>

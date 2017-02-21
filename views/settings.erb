@@ -1,6 +1,6 @@
 <nav>
   <ul class = "navbar">
-    <img src = images\logo.png></img>
+    <img src = "images\musiclogo2.png" class="logo"></img>
     <li>
       <a href = \logout class="active">LOGOUT</a>
     </li>
@@ -12,23 +12,23 @@
     </li>     
   </ul>
 </nav>
-<form method="POST" action="/settings">
+<form method="POST" action="/settings" class="form1">
+<div class="lg">Profile</div>
   <fieldset>
-    <legend>PROFILE</legend>
-    <label for="user">First Name</label>
+    <label for="user" class="enter">First Name</label>
     <input name="fname" value=<%= @current_user.fname %>><br />
-    <label for="user">Last Name</label>
+    <label for="user" class="enter">Last Name</label>
     <input name="lname" value=<%= @current_user.lname %>><br />
-    <label for="email">Email</label>
+    <label for="email" class="enter">Email</label>
     <input name="email" value=<%= @current_user.email %>><br />
-    <label for="username">Username</label>
+    <label for="username" class="enter" >Username</label>
     <input name="username" value=<%= @current_user.username %>><br />
-    <label for="password">Current password</label>
+    <label for="password" class="enter" >Current password</label>
     <input type="current password" name="password"><br />
-    <label for="new password"> New password</label>
+    <label for="new password" class="enter" > New password</label>
     <input type="new password" name="new_password"/><br />
-    <input type="submit" value="Edit Profile" /><br />
-    <input formaction="/delete-account" type="submit" value="DELETE USER"/>
+    <input type="submit" value="Edit Profile" class="sub2" /><br />
+    <input formaction="/delete-account" type="submit" value="DELETE USER" class="sub2" />
   </fieldset>
 </form>
 
