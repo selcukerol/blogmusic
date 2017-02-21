@@ -1,0 +1,17 @@
+<form method="POST" action="/login">
+	<fieldset>
+		<legend>Login</legend>
+		<label for="user">First Name</label>
+		<input name="fname" /><br />
+		<label for="user">Last Name</label>
+		<input name="lname" /><br />
+		<label for="email">Email</label>
+		<input name="email" /><br />
+		<label for="password">Password</label>
+		<input type="password" name="password" /><br />
+		<input type="submit" value="Login" />
+	</fieldset>
+</form>
+
+<%= "<a href=\"/logout\">Logout</a>" if session[:user_id] %>
+<%= flash[:notice] %>
