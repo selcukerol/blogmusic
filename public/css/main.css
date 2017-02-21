@@ -5,13 +5,13 @@ body{
 }
 
 .logo{
-  height:120px;
+  height:140px;
   width: 130px;
 }
 
 
 .navbar {
-    height: 145px;
+    height: 140px;
     list-style-type: none;
     margin: -4px;
     padding: -6px;
@@ -27,6 +27,7 @@ body{
     .navbar li {
             float: right;
             margin-right: 60px;
+            margin-top: 20px;
     }
     .navbar li a {
            font-family: "Serif", Garamond, monospace;

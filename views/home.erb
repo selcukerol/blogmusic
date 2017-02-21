@@ -4,7 +4,6 @@
 	<title>HOME PAGE</title>
 </head>
 <body>
-<<<<<<< HEAD
 	<nav>
 		<%= flash[:notice] %>
 		<ul class = "navbar">
@@ -30,54 +29,56 @@
 			<% end %>			
 		</ul>
 	</nav>
+	<% if session[:user_id] %>
+	<a href = \settings class ="active">Logged in as "<%= @current_user.username %>"</a>
+	<% end %>
+	<div class="row">
+		<div class="col-xs-2">
+		</div>
+		<div class="col-xs-8 ti">
+			Visible Cloaks: Reassemblage
+		</div>
+		<div class="col-xs-2">
+		</div>
+	</div>
 
 	<div class="row">
-			<div class="col-xs-2">
-			</div>
-			<div class="col-xs-8 ti">
-			Visible Cloaks: Reassemblage
-			</div>
-			<div class="col-xs-2">
-			</div>
+		<div class="col-xs-2">
 		</div>
-
-		<div class="row">
-			<div class="col-xs-2">
-			</div>
-			<div class="col-xs-8 tx">
+		<div class="col-xs-8 tx">
 			far, Spencer Doran’s mixtapes have overshadowed his actual albums. In 2010, the Portland, Oregon, producer posted Fairlights, Mallets and Bamboo—Fourth-World Japan, Years 1980–1986, a stunning collection of early-’80s Japanese synthesizer music by artists like Yellow Magic Orchestra’s Haruomi Hosono and Ryuichi Sakamoto. While not a party-starting DJ set, it was in its own meticulous, contemplative way, influential; you can hear its sensibility course through later works by the likes of Oneohtrix Point Never, Neon Indian, Motion Graphics, and the entire vaporwave contingency. A second volume followed, as did another series, Music Interiors, cementing Doran’s status as an innovative curator of now-obscure sounds.
-			</div>
-			<div class="col-xs-2">
-			</div>
 		</div>
+		<div class="col-xs-2">
+		</div>
+	</div>
 
-		<% @posts.each do |post| %>
+	<% @posts.each do |post| %>
 
-		<div class="row">
-			<div class="col-xs-2">
-			</div>
-			<div class="col-xs-8 ti">
+	<div class="row">
+		<div class="col-xs-2">
+		</div>
+		<div class="col-xs-8 ti">
 
 			<%= post.title %>
 
-			</div>
-			<div class="col-xs-2">
-			</div>
 		</div>
+		<div class="col-xs-2">
+		</div>
+	</div>
 
-		<div class="row">
-			<div class="col-xs-2">
-			</div>
-			<div class="col-xs-8 tx">
+	<div class="row">
+		<div class="col-xs-2">
+		</div>
+		<div class="col-xs-8 tx">
 			
 			<%= post.text %>
 
-			</div>
-			<div class="col-xs-2">
-			</div>
-
-			<% end %>
 		</div>
+		<div class="col-xs-2">
+		</div>
+
+		<% end %>
+	</div>
 	<!-- <h1>WELCOME TO BLOGMUSIC</h1>
 
 	<% if session[:user_id] %>
