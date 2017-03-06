@@ -10,30 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170216185632) do
 
-  create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.string "text"
-=======
 ActiveRecord::Schema.define(version: 20170216171802) do
 
   create_table "posts", force: :cascade do |t|
     t.string  "title"
     t.string  "text"
     t.integer "user_id"
->>>>>>> 8a41cdf0616d1b4eabdef4a1b32c29bd6cd67028
+
   end
 
   create_table "users", force: :cascade do |t|
     t.string "fname"
     t.string "lname"
     t.string "email"
-<<<<<<< HEAD
-=======
     t.string "username"
->>>>>>> 8a41cdf0616d1b4eabdef4a1b32c29bd6cd67028
+
     t.string "password"
   end
 

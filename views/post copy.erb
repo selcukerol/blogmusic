@@ -1,4 +1,31 @@
-
+<nav>
+		<%= flash[:notice] %>
+		<ul class = "navbar">
+			<img src = "images\musiclogo2.png" class="logo"></img>
+			<% unless @current_user %>
+			<li>
+				<a href = \signup class= "active">SIGNUP</a>
+			</li>
+			<li>
+				<a href = \login class= "active">LOGIN</a>
+			</li>
+			<% end %>
+			<% if session[:user_id] %>
+			<li>
+				<a href = \logout class = "active">LOGOUT</a>
+			</li>
+			<li>
+				<a href = \post class = "active">POST</a>
+			</li>
+			<li>
+				<a href = \ class = "active">HOME</a>
+			</li>
+			<li>
+				<a href = \profile class = "active">Profiles</a>
+			</li>
+			<% end %>			
+		</ul>
+	</nav>
 <!DOCTYPE html>
 <html>
 <head>

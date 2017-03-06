@@ -24,29 +24,16 @@
 			<li>
 				<a href = \profile class = "active">Profiles</a>
 			</li>
+
 			<% end %>			
 		</ul>
 	</nav>
 
-<div class="row">
-		<div class="col-xs-2">
-		</div>
-		<div class="col-xs-8 ti">
-		<%= post.title %>
-		</div>
-		<div class="col-xs-2">
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-xs-2">
-		</div>
-		<div class="col-xs-8 tx">
-			
-			<%= post.text %>
-
-		</div>
-		<div class="col-xs-2">
-		</div>
-
-		<% end %>
+<form method="POST" action="/posts/<%=@post.id%>" class="form2">   
+		<label for="title" class="enter">Album Title</label>   
+		<input type="text" name="[post][title]" value=<%= @post.title%>>   
+		<label for="text" class="enter" id="ta">Review</label>   
+		<input type="text" name="[post][text]" value=<%= @post.text%>> 
+		<input type="submit" class="sub"> 
+		 <input formaction="/delete/<%=@post.id%>" type="submit" value="DELETE POST" class="sub2" />
+	</form>
