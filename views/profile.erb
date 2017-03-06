@@ -28,11 +28,13 @@
 		</ul>
 	</nav>
 
-<div class="row">
+<% @users.each do |user| %>
+
+	<div class="row">
 		<div class="col-xs-2">
 		</div>
 		<div class="col-xs-8 ti">
-		<%= post.title %>
+		<a href="/profile/<%= user.id %>"><%= user.username %></a>
 		</div>
 		<div class="col-xs-2">
 		</div>
@@ -43,7 +45,7 @@
 		</div>
 		<div class="col-xs-8 tx">
 			
-			<%= post.text %>
+			<%= user.email %>
 
 		</div>
 		<div class="col-xs-2">

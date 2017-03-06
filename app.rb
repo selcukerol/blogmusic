@@ -23,6 +23,16 @@ get '/login' do
   erb :login
 end
 
+get '/profile' do
+  @users = User.all
+  erb :profile
+end
+
+get '/profile/:id' do
+  @user=User.find(params[:id])
+  erb :profile_detail
+end
+
 get '/signup' do
   erb :signup
 end
@@ -47,6 +57,21 @@ get '/post/:id' do
   erb '/post/detail'.to_sym
 end
 
+post '/posts/:id' do
+  @post = Post.find(params[:id])
+  @post.update(params[:post])
+  
+ erb '/post/detail'.to_sym
+ end
+
+
+get '/post/:id/edit' do
+  @post = Post.find(params[:id])
+  erb :post_edit
+ end
+
+ 
+
 # Logout of your account
 get '/logout' do
   session.destroy
@@ -68,7 +93,7 @@ end
 end
 # Create new user
 post '/signup' do
-  @newuser = User.create(params[:user])
+  @newuser = User.create!(params[:user])
   redirect '/login'
 
 end  
@@ -111,6 +136,15 @@ post "/delete-account" do
  current_user.posts.destroy_all
  current_user.destroy
  session[:user_id] = nil
+
+ redirect "/"
+end
+
+post "/delete/:id" do
+
+  @post = Post.find(params[:id])
+  @post.destroy
+
 
  redirect "/"
 end
